@@ -186,6 +186,7 @@ fn run(args: &[&str]) -> Result<(), &'static str> {
             let mut projects = project::get_projects(&config_file_path)?;
 
             project::remove_project(name, &config_file_path, &mut projects)?;
+            unalias(name);
 
             Ok(())
         }
