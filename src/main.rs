@@ -49,15 +49,12 @@ fn alias(project_name: &str) {
 }
 
 fn alias_force(project_name: &str) {
-    println!(
-        "function {}() {{ pjump go {}; }}",
-        project_name, project_name
-    );
+    println!("alias {}='pjump go {}'", project_name, project_name);
 }
 
 fn unalias(project_name: &str) {
     if should_alias() {
-        println!("unfunction {}", project_name);
+        println!("unalias {}", project_name);
     }
 }
 
